@@ -15,9 +15,9 @@
 
 - 리뷰어: [Daheen Lee](https://github.com/daheenallwhite)
 
-- 학습 키워드: Core ML, Create ML, Keras, CoreGraphics, UIGraphicsImageRenderer
+- 학습 키워드: Core ML, Create ML, Keras, Classification, Core Graphics, UIGraphics
 
-## 1. 상세 기능
+## 1. 앱 상세 기능
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/28377820/117620484-7aa3a100-b1ab-11eb-847a-9129c672c87b.png" width="40%"/>
@@ -34,15 +34,17 @@
 - 분류 결과가 나타나 있으면 사라지게 하여 화면을 초기상태로 만듭니다.
 ## 2. 구현 과정
 ### 2.1. ML Model 구현
-- CoreML과 Keras를 이용하여 모델을 1개씩 만들고, 두 모델 중에서 더 정확성이 높은 모델을 최종 모델로 선정하였습니다.
+- `Core ML`과 `Keras`를 이용하여 모델을 각각 1개씩 만들고, 두 모델 중에서 더 정확성이 높은 모델을 최종 모델로 선정하였습니다.
 ### 2.2. UI 구현
 - 코드로 UI를 구현하였습니다.
 - 단일 화면으로 구성됩니다. 화면 중앙에는 `CanvasView`가 있고, 그 아래에 2개의 `UIButton`과 2개의 `UILabel`이 있습니다.
 ### 2.3. 기능 구현
 - `CanvasView`의 그리기 기능
 - `CanvasView`의 이미지 추출 기능
+- `CanvasView`의 그림 지우기 기능
 - 이미지 분류 기능
 - 이미지 분류 결과 표시 기능
+- 이미지 분류 결과 숨김 기능
 
 ## 3. 문제 해결(Troubleshooting)
 ### 3.1. CanvasView의 선이 매끄럽게 이어지지 않는 문제
@@ -94,11 +96,11 @@ final class CanvasView: UIView {
     ...
 }
 ```
-그래서 사용자가 터치를 계속 이어서 그림을 그리면, 좌표마다 선이 추가 되어 쌓이기 때문에 꼭지점 부분이 날카롭게 된다고 판단하였습니다. 그래서 지금처럼 터치 좌표마다 선이 쌓이게 하지 않고, 직전 터치 좌표와 현재 터치 좌표를 연결하는 선을 그리도록 수정하면 될 것이라 가정하고 `CanvasView` 코드 전반을 아래와 같이 수정하였습니다.
+그래서 사용자가 터치를 계속 이어서 그림을 그리면, 좌표마다 선이 추가 되어 쌓이기 때문에 꼭지점 부분이 날카롭게 된다고 판단하였습니다. 그래서 지금처럼 터치 좌표마다 선이 쌓이게 하지 않고, 직전 터치 좌표와 현재 터치 좌표를 연결하는 선을 그리도록 수정하면 될 것이라 가정하고 `CanvasView` 코드를 다음의 과정을 거쳐서 수정하였습니다.
 
 #### 3.1.3. 해결 과정
 #### 3.1.3.1. lines 프로퍼티 타입 변경
-터치 좌표를 시작점과 끝점을 가진 선으로 나타내기 위하여 lines 프로퍼티의 타입을 `2차원 CGPoint Array`에서 `1차원 Line Array`로 아래와 같이 수정하였습니다.
+터치 좌표를 시작점과 끝점을 가진 선으로 나타내기 위하여 lines 프로퍼티의 타입을 `2차원 CGPoint Array`에서 `1차원 Line Array`로 수정하였습니다.
 ```swift
 final class CanvasView: UIView {
     /// private var lines: [[CGPoint]] = []
