@@ -221,7 +221,7 @@ final class CanvasView: UIView {
 ### 3.2. 이미지 분류에 실패했을 경우에 대한 예외처리 문제
 #### 3.2.1. 문제 내용
 
-초기 버전에서 이미지 분류가 실패했을 때의 예외처리는 아래 코드와 같이 fatalError 또는 print로 에러메시지를 출력하도록 하였습니다. 
+초기 버전에서 이미지 분류가 실패했을 때의 예외처리는 아래 코드와 같이 `fatalError` 또는 `print`로 에러메시지를 출력하도록 하였습니다. 
 ```swift
   private func updateClassifications(for image: UIImage) {
         ...
@@ -239,7 +239,7 @@ final class CanvasView: UIView {
         }
     }
 ```
-하지만 이러한 예외처리는 사용자가 오류가 발생했는지 인지하지 못할뿐만 아니라, fatalError는 앱이 종료 되므로 좋은 예외처리가 아니라고 리뷰어 [Daheen Lee](https://github.com/daheenallwhite)이 의견을 주셨습니다. 그래서 저희 팀은 더 나은 예외처리를 위해 다음과 같이 고민하였습니다.
+하지만 이러한 예외처리는 사용자가 오류가 발생했는지 인지하지 못할뿐만 아니라, `fatalError`는 앱이 종료 되므로 좋은 예외처리가 아니라고 리뷰어 [Daheen Lee](https://github.com/daheenallwhite)이 의견을 주셨습니다. 그래서 저희 팀은 더 나은 예외처리를 위해 다음과 같이 고민하였습니다.
 #### 3.2.2. 해결 과정
 #### 3.2.2.1 UIAlertController로 에러메세지 표시하는 방법
 에러메세지를 사용자에게 인식시키기 위하여 `UIAlertController`를 사용하는게 어떻냐고 팀원 [Glenn](https://github.com/Journey36)이 의견을 주셨습니다. 이보다 더 나은 방법이 없으면 이 방법으로 예외처리를 하기로 하고, 더 나은 방법을 같이 생각해보았습니다.
@@ -263,7 +263,7 @@ final class CanvasView: UIView {
     }
 ```
 
-그리고 최종적으로, `dispatchWork` 메서드를 이용하여 3회 시도 후 `UILabel`에 에러메세지를 표시하도록 아래와 같이 코드를 수정하였습니다.
+그리고 최종적으로, `dispatchWork` 메서드를 이용하여 3회 시도 후 `UILabel`에 에러메세지를 표시하도록 아래와 같이 코드를 수정하였습니다. `updateClassifications` 메서드는 이미지 분류결과를 갱신하는 메서드이며, `결과보기` 버튼을 누르면 호출됩니다.
 
 ```swift
   private func updateClassifications() {
@@ -275,7 +275,7 @@ final class CanvasView: UIView {
     }
 ```
 
-`updateClassifications` 메서드는 이미지 분류결과를 갱신하는 메서드이며, `결과보기` 버튼을 누르면 호출되는 메서드입니다. 위와 같이 코드를 수정함으로써 이미지 분류가 실패하더라도 3회 분류를 다시 시도한 후에 에러메세지를 `UILabel`에 에러메세지를 표시하게 됩니다.
+이로써 기존에 `fatalError`와 `print`로 에러메세지를 표시하는 방식에서 3회 재시도 후에 에러메세지를 화면 중앙의 `UILabel`에 에러메세지를 표시하도록 수정하였습니다.
 
 
 ## 4. 참고
