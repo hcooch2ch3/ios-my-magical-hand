@@ -48,7 +48,7 @@
 <img src="https://user-images.githubusercontent.com/28377820/118233042-607c0280-b4cc-11eb-97f5-15ca7d240496.png" width="30%"/>
 </p>
 
-  - ⓐ (CanvasView) : Custom으로 구현한 View이고, 사용자가 그림을 그릴 수 있는 View.
+  - ⓐ (CanvasView) : 커스텀으로 구현한 뷰이고, 사용자가 그림을 그릴 수 있는 뷰.
   - ⓑ (UIButton) : 사용자가 버튼을 누르면 이미지 분류를 수행하고, ⓓ와 ⓔ가 나타나서 분류 결과를 보여주도록 하는 버튼.
   - ⓒ (UIButton) : 사용자가 버튼을 누르면 ⓐ에 그린 그림을 지우고, ⓓ와 ⓔ가 사라지도록 하는 버튼.
   - ⓓ (UILabel) : 이미지 분류결과를 보여주는 레이블.
