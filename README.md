@@ -34,9 +34,15 @@
   - 분류 결과가 나타나 있으면 사라지게 하여 화면을 초기상태로 만듭니다.
 ## 2. 구현 과정
 ### 2.1. ML Model 구현
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/28377820/118229791-936fc780-b4c7-11eb-8af0-74df6bbd728a.png" width="40%"/>
+  <img src="https://user-images.githubusercontent.com/28377820/118229848-ac787880-b4c7-11eb-8a41-81777ca7b77e.png" width="41%"/>
+</p>
+
 - `Core ML`과 `Keras`를 이용하여 모델을 각각 1개씩 만들고, 두 모델 중에서 더 정확성이 높은 모델을 최종 모델로 선정하였습니다.
 ### 2.2. UI 구현
-- 코드로 UI를 구현하였습니다.
+- 협업시 Conflict을 최소화하고자 코드로 UI를 구현하였습니다.
 - 단일 화면으로 구성됩니다. 화면 중앙에는 `CanvasView`가 있고, 그 아래에 2개의 `UIButton`과 2개의 `UILabel`이 있습니다.
 ### 2.3. 기능 구현
 - `CanvasView`의 그리기 기능
