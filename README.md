@@ -55,12 +55,11 @@
   - ⓔ (UILabel) : 이미지 분류정확도를 보여주는 레이블.
 
 ### 2.3. 기능 구현
-- `CanvasView`의 그리기 기능
-- `CanvasView`의 이미지 추출 기능
-- `CanvasView`의 그림 지우기 기능
-- 이미지 분류 기능
-- 이미지 분류 결과 표시 기능
-- 이미지 분류 결과 숨김 기능
+- `CanvasView`의 그리기 기능 : 사용자가 `CanvasView`에 터치로 화면에 그림을 그릴 수 있도록 구현하였습니다.
+- `CanvasView`의 이미지 추출 기능 : 사용자가 `CanvasView` 그린 그림을 UIImage로 추출할 수 있도록 구현하였습니다. 
+- `CanvasView`의 그림 지우기 기능 : `CanvasView`의 그림을 모두 지우도록 구현하였습니다.  
+- 이미지 분류 기능 : `CanvasView`로부터 추출한 UIImage를 MLModel에 입력으로 넣고 이미지 분류 결과를 반환 받습니다.
+- 이미지 분류 결과 표시 기능 : 화면 중앙의 hidden 상태인 `UILabel`을 나타내고, 이미지 분류결과와 분류 정확도를 표시합니다.
 
 ## 3. 문제 해결(Troubleshooting)
 ### 3.1. CanvasView의 선이 매끄럽게 이어지지 않는 문제
