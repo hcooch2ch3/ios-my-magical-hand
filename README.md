@@ -5,17 +5,17 @@
 <img src="https://user-images.githubusercontent.com/28377820/117255584-c6410c80-ae84-11eb-9a3d-d1971581ed1c.gif" width="20%"/>
 </p>
 
-- 요약: 사용자가 화면에 그린 그림을 동그라미, 네모, 세모, 별, 4가지 모양 중 하나로 판별해주는 앱을 구현.
+- 요약 : 사용자가 화면에 그린 그림을 동그라미, 네모, 세모, 별, 4가지 모양 중 하나로 판별해주는 앱을 구현.
   
-- 진행 기간: 2021.04.19 ~ 2021.04.30 [2주]
+- 진행 기간 : 2021.04.19 ~ 2021.04.30 [2주]
 
-- 팀 구성: 밤(본인), [Glenn](https://github.com/Journey36) [2인]
+- 팀 구성 : 밤(본인), [Glenn](https://github.com/Journey36) [2인]
 
-- 역할 분담: 기능을 각자 구현한 다음, 상호 검토 후 코드 병합
+- 역할 분담 : 기능을 각자 구현한 다음, 상호 검토 후 코드 병합
 
-- 리뷰어: [Daheen Lee](https://github.com/daheenallwhite)
+- 코드 리뷰어 : [Daheen Lee](https://github.com/daheenallwhite)
 
-- 학습 키워드: Core ML, Create ML, Keras, Classification, Core Graphics, UIGraphics
+- 학습 키워드 : `Core ML`, `Create ML`, `Keras`, `Classification`, `Core Graphics`, `UIGraphics`
 
 ## 1. 앱 상세 기능
 
