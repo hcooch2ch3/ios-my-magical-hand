@@ -17,13 +17,12 @@
 
 - 학습 키워드 : `Core ML`, `Create ML`, `Keras`, `Classification`, `Core Graphics`, `UIGraphics`
 
-## 0. 목차
+## 목차
 [1. 앱 상세 기능](#1-앱-상세-기능)
-
 [2. 구현 과정](#2-구현-과정)
-  * [2.1. ML Model 구현](#21-ml-model---)
-  * [2.2. UI 구현](#22-ui---)
-  * [2.3. 기능 구현](#23------)
+  * [2.1. ML Model 구현](#21-ML-Model-구현)
+  * [2.2. UI 구현](#22-UI-구현)
+  * [2.3. 기능 구현](#23-기능-구현)
 - [3. 문제 해결(Troubleshooting)](#3-------troubleshooting-)
   * [3.1. CanvasView의 선이 매끄럽게 이어지지 않는 문제](#31-canvasview--------------------)
     + [3.1.1. 문제 내용](#311------)
