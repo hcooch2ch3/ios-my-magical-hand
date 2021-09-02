@@ -1,5 +1,5 @@
 # 내 손은 금손(My Magical Hand)
-## 야곰 iOS 커리어 스타터 캠프 12번째 프로젝트
+## 야곰 iOS 커리어 스타터 캠프 프로젝트 13
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/28377820/117255584-c6410c80-ae84-11eb-9a3d-d1971581ed1c.gif" width="20%"/>
